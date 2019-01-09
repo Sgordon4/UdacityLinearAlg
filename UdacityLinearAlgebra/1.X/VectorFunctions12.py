@@ -18,28 +18,31 @@ import VectorFunctions10
 
 def projection(vector1, vector2):
     # Projection of v1 onto v2 is
-    # v1 dot v2     
+    # v1 dot v2
     #   |v2|       *  v2
     dotted = VectorFunctions4.multiply(vector1, vector2)
     magnitude = 0
     for vec in vector2:
         magnitude += vec**2
-    
+
     dot = 0
     for vec in dotted:
         dot += vec
-        
+
     scalar = dot / magnitude
-    
+
     projection = [scalar * vec2 for vec2 in vector2]
     return projection
 
 def perpendicular(vector1, vector2):
     parallel = projection(vector1, vector2)
-    
+
     perp = VectorFunctions4.subtract(vector1, parallel)
     return perp
 
+
+
+#-------------------------------------------------#
 
 data1 = [2, 1, 4]
 data2 = [1, -2, 1]
